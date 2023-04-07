@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+
+    <p> Message : <%= message %></p>
+
+    <ul class="students">
+        <% for(const student of listStudentsPromo) { %>
+            <li class="students__card">
+
+                <img alt=`student_img_ ${<%= student.first_name %> <%= student.last_name %>}` src=<%= student.profile_picture_url %> />
+
+                <p>Promo ID : <%= student.promo_id %></p>
+
+                <p>
+                    <%= student.first_name %> <%= student.last_name %>
+                </p>
+                
+            </li>
+        <% } %>
+    </ul>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+    <main>
+<h1>Ajouter un étudiant</h1>
+
+<% if (locals.message !== undefined) { %>
+<h2><%= message %></h2>
+    <% } %>
+
+<form method="POST" action="/admin/addStudent">
+    <p>
+        <label for="promo">Promo</label>
+        <select name="promo" id="promo" required>
+            <% for (const promo of listPromos) { %>
+                <option value="<%= promo.id %>"><%= promo.name %></option>
+            <% } %>
+        </select>
+    </p>
+    <p>
+        <label>Prénom</label>
+        <input type="text" name="first_name" placeholder="Prénom" required>
+    </p>
+    <p>
+        <label>Nom</label>
+        <input type="text" name="last_name" placeholder="Nom" required>
+    </p>
+    <p>
+        <label>Pseudo Github</label>
+        <input type="text" name="github_username" placeholder="PrenomNom" required>
+    </p>
+    <p>
+        <input class="btn btn-primary" type="submit" value="Valider" />
+    </p>
+</form>
+
+</main>
+
+<%- include('partials/footer') %>

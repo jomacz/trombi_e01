@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<h2>Voici toutes les promos de l'école</h2>
+
+<ul class="cards">
+<% for(const promo of listPromos){ %>
+
+    <!-- /promos/Cosmos -- possible aussi avec l'id si le nom n'est pas unique dans notre liste -->
+
+    <li class="card card--label">
+        <p>
+            <a href="/promos/<%= promo.id %>"> 
+            <%= promo.name %>
+        </a> 
+        </p>
+    </li>
+
+<% } %>
+</ul>
+
+<%- include('partials/footer') %>
